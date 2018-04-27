@@ -6,6 +6,7 @@ var app = express();
 app.use(morgan('combined'));
 
 var content = {
+    articleOne : {
     title : 'Article One ! Ashish Patidar',
     heading: 'Article one',
     date : 'April 27, 2018',
@@ -22,7 +23,7 @@ var content = {
         <p>
             This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.
         </p>`
-
+}
     
 };
 
@@ -64,7 +65,7 @@ var htmlTemplate =`
 `;
 }
 app.get('/article-one', function (req, res) {
-   res.send(createTemplate(content));
+   res.send(createTemplate(articleOne));
 });
 
 app.get('/article-two', function (req, res) {
