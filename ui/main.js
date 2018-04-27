@@ -1,2 +1,2 @@
 console.log('Loaded!');
-var element = element.getElementById("main-text")
+var element = document.getElementById("main-text")
