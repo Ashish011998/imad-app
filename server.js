@@ -5,7 +5,8 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articleOne = {
+var articles = { 
+article-one : {
     title : 'Article One ! Ashish Patidar',
     heading: 'Article one',
     date : 'April 27, 2018',
@@ -23,8 +24,44 @@ var articleOne = {
             This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.
         </p>`
     
+},
+article-two : {
+    title : 'Article Two ! Ashish Patidar',
+    heading: 'Article Two',
+    date : 'April 27, 2018',
+    content : `
+        <p>
+            This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.
+        </p>
+        <p>
+            This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.
+        </p>
+        <p>
+            This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.
+        </p>
+        <p>
+            This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.
+        </p>`
+},
+article-three : {
+    title : 'Article Three ! Ashish Patidar',
+    heading: 'Article Three',
+    date : 'April 27, 2018',
+    content : `
+        <p>
+            This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.
+        </p>
+        <p>
+            This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.
+        </p>
+        <p>
+            This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.
+        </p>
+        <p>
+            This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.This is content of article one.
+        </p>`
+}
 };
-
 function createTemplate(data){
 var date = data.date;
 var title = data.title;
@@ -64,8 +101,8 @@ var htmlTemplate =`
 `;
 return htmlTemplate;
 }
-app.get('/article-one', function (req, res) {
-   res.send(createTemplate(articleOne));
+app.get('/:articleName', function (req, res) {
+   res.send(createTemplate(articles[articleName]));
 });
 
 app.get('/article-two', function (req, res) {
