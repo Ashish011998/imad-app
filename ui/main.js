@@ -1,7 +1,7 @@
-var button = document.getElementById('counter');
+var bu = document.getElementById('counter');
 var counter = 0;
 
-button. onclick = myFuntion (); 
+bu.onclick = myFuntion (); 
 
 function myFunction()
 {
