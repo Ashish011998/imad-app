@@ -20,6 +20,6 @@ request.onreadystatechange = function(){
 
     
 };
-request.open('GET', 'http://ashishpatidar01.imad.hasura.io/counter',true);
+request.open('GET', 'http://ashishpatidar01.imad.hasura-app.io/counter',true);
 request.send('null');
 };
