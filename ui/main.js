@@ -1,11 +1,9 @@
-var bu = document.getElementById('counter');
 var counter = 0;
+var button = document.getElementById('counter');
 
-bu.onclick = myFuntion (); 
-
-function myFunction()
-{
-    counter = counter + 1;
-var span = document.getElementById('count');
-span.innerHTML = counter.toString();    
-}
+button.onclick = fucntion (){
+counter=counter+1;
+var span  = document.getElementById("count");
+span.innerHTML=counter.toString();
+    
+};
